@@ -1,8 +1,8 @@
 import React from 'react';
-import { ModalProvider } from './context/ModalContext';
+import { ModalProvider } from '@context/ModalContext';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
+import Home from '@pages/Home';
+import About from '@pages/About';
 
 const App: React.FC = () => {
   return (

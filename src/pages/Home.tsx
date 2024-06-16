@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import { useModal } from '../context/ModalContext';
+import Layout from '@components/Layout';
+import { useModal } from '@context/ModalContext';
 
 const Home: React.FC = () => {
   const { showModal } = useModal();
