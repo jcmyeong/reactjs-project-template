@@ -1,5 +1,5 @@
 import React, { createContext, useState, ReactNode, useContext } from 'react';
-import Modal from '../components/Modal';
+import Modal from '@components/Modal';
 
 interface ModalContextType {
   showModal: (content: ReactNode) => void;
