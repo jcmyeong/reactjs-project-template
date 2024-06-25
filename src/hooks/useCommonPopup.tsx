@@ -1,4 +1,8 @@
 
+import PopupAlert from "@components/Popup/PopupAlert"
+import { Modal } from "../App"
+import PopupConfirm from "@components/Popup/PopupConfirm"
+
 /**
  * 공통 Popup Properties
  */
@@ -20,39 +24,41 @@ export const useCommonPopup = () => {
    * Alert Popup 표시
    */
   const showAlert = (props: CommonPopupProps) => {
-    const { title, message, onConfirm } = props
-    if (title) {
-      alert(`[${title}]\n\n${message}`)
-    } else {
-      alert(`${message}`)
-    }
+    //const { title, message, onConfirm } = props
+    // if (title) {
+    //   alert(`[${title}]\n\n${message}`)
+    // } else {
+    //   alert(`${message}`)
+    // }
     
-    if (onConfirm !== undefined) {
-      onConfirm()
-    }
+    // if (onConfirm !== undefined) {
+    //   onConfirm()
+    // }
+    Modal.open(PopupAlert, props)
   }
 
   /**
    * Confirm Popup 표시
    */
   const showConfirm = (props: CommonPopupProps) => {
-    const { title, message, onConfirm, onCancel } = props
-    let result: boolean
-    if (title) {
-      result = confirm(`[${title}]\n\n${message}`)
-    } else {
-      result = confirm(`${message}`)
-    }
+    //const { title, message, onConfirm, onCancel } = props
+    // let result: boolean
+    // if (title) {
+    //   result = confirm(`[${title}]\n\n${message}`)
+    // } else {
+    //   result = confirm(`${message}`)
+    // }
     
-    if (result) {
-      if (onConfirm !== undefined) {
-        onConfirm()
-      }
-    } else {
-      if (onCancel !== undefined) {
-        onCancel()
-      }
-    }
+    // if (result) {
+    //   if (onConfirm !== undefined) {
+    //     onConfirm()
+    //   }
+    // } else {
+    //   if (onCancel !== undefined) {
+    //     onCancel()
+    //   }
+    // }
+    Modal.open(PopupConfirm, props)
   }
 
   return { showAlert, showConfirm }
