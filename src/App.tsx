@@ -1,14 +1,15 @@
 
 import React, { Suspense } from 'react';
-import { ModalProvider } from '@context/ModalContext';
+import { ModalProvider } from '@/context/ModalContext';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import Home from '@pages/Home';
-import About from '@pages/About';
+import Home from '@/pages/Home';
+import About from '@/pages/About';
 
 //import "./App.css";
 import "react-modal-global/styles/modal.scss";
 import { ModalContainer, ModalController } from 'react-modal-global'
-import PopupExample from '@components/Popup/PopupExample';
+import PopupExample from '@/components/Popup/PopupExample';
+import { RecoilRoot } from 'recoil';
 export const Modal = new ModalController({
   defaultParams: {},
   components: {
@@ -20,20 +21,22 @@ export const Modal = new ModalController({
 
 const App: React.FC = () => {
   return (
-    <ModalProvider>
-      <BrowserRouter>
-        <div className="app">
-          <Routes>
-            <Route path="/" Component={Home} />
-            <Route path="/about" Component={About} />
-          </Routes>
-        </div>
-        <Suspense>
-          <ModalContainer controller={Modal} />
-        </Suspense>
-      </BrowserRouter>
-    </ModalProvider>
-  );
+    <RecoilRoot>
+      <ModalProvider>
+        <BrowserRouter>
+          <div className="app">
+            <Routes>
+              <Route path="/" Component={Home} />
+              <Route path="/about" Component={About} />
+            </Routes>
+          </div>
+          <Suspense>
+            <ModalContainer controller={Modal} />
+          </Suspense>
+        </BrowserRouter>
+      </ModalProvider>
+    </RecoilRoot> 
+  )
 }
 
 export default App

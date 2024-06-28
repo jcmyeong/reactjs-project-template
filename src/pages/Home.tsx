@@ -1,20 +1,14 @@
 import React from 'react'
-import { useModal } from '@context/ModalContext'
-import Layout from '@components/Layout'
+import Layout from '@/components/Layout'
 import { Modal } from '../App';
-import PopupExample from '@components/Popup/PopupExample';
-import { useCommonPopup } from '@hooks/useCommonPopup';
+import PopupExample from '@/components/Popup/PopupExample';
+import { useCommonPopup } from '@/hooks/useCommonPopup';
 import styled from 'styled-components';
 
 const Home: React.FC = () => {
-  //const { showModal } = useModal();
 
   const { showAlert, showConfirm } = useCommonPopup()
 
-
-  // const handleShowModal = () => {
-  //   showModal(<div>Welcome to the home page!</div>);
-  // }
 
   const openPopup = () => Modal.open(PopupExample)
 
@@ -23,13 +17,16 @@ const Home: React.FC = () => {
     const type = event.currentTarget.getAttribute('data-type')
     if (type === 'alert') {
       showAlert({
-        // title: 'Alert 팝업',
+        title: 'Alert 팝업',
         message: '이것은 Alert 팝업 예제 입니다.',
+        onConfirm: () => { console.log('확인 클릭!') },
       })
     } else if (type === 'confirm') {
       showConfirm({
-        // title: 'Confirm 팝업',
+        title: 'Confirm 팝업',
         message: '현재 진행 상황을 저장하시겠습니까?',
+        confirmLabel: '예',
+        cancelLabel: '아니요',
         onConfirm: () => { console.log('확인 클릭!') },
         onCancel: () => { console.log('취소 클릭!') }
       })
@@ -49,7 +46,6 @@ const Home: React.FC = () => {
       <ChildNode>
         <button data-type="confirm" onClick={handleClick}>Show Confirm</button>
       </ChildNode>
-      
     </Layout>
   );
 }

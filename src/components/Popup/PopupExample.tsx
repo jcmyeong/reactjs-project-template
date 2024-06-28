@@ -1,5 +1,5 @@
-import PopupLayout from "@components/PopupLayout"
-import { Modal } from "../../App"
+import PopupLayout from "@/components/PopupLayout"
+import { Modal } from "@/App"
 
 const PopupExample = () => {
   const openPopup = () => Modal.open(PopupExample)

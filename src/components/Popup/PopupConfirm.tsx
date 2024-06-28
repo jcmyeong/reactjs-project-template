@@ -1,6 +1,6 @@
 import React from "react"
-import PopupLayout from "@components/PopupLayout"
-import { CommonPopupProps } from "@hooks/useCommonPopup"
+import PopupLayout from "@/components/PopupLayout"
+import { CommonPopupProps } from "@/hooks/useCommonPopup"
 import { useModalWindow } from "react-modal-global"
 import { styled } from "styled-components"
 

@@ -1,7 +1,7 @@
 
-import PopupAlert from "@components/Popup/PopupAlert"
+import PopupAlert from "@/components/Popup/PopupAlert"
 import { Modal } from "../App"
-import PopupConfirm from "@components/Popup/PopupConfirm"
+import PopupConfirm from "@/components/Popup/PopupConfirm"
 
 /**
  * 공통 Popup Properties

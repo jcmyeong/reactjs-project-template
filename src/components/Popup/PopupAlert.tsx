@@ -1,6 +1,6 @@
 import React from "react"
-import PopupLayout from "@components/PopupLayout"
-import { CommonPopupProps } from "@hooks/useCommonPopup"
+import PopupLayout from "@/components/PopupLayout"
+import { CommonPopupProps } from "@/hooks/useCommonPopup"
 import { useModalWindow } from "react-modal-global"
 import { styled } from "styled-components"
 
@@ -32,7 +32,6 @@ const PopupAlert = (props: CommonPopupProps) => {
 const SpaceArea = styled.div`
   padding: 10px;
 `
-
 const Message = styled.p`
   text-align: left;
 `
