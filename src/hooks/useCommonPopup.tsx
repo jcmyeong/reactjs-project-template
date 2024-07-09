@@ -24,16 +24,6 @@ export const useCommonPopup = () => {
    * Alert Popup 표시
    */
   const showAlert = (props: CommonPopupProps) => {
-    //const { title, message, onConfirm } = props
-    // if (title) {
-    //   alert(`[${title}]\n\n${message}`)
-    // } else {
-    //   alert(`${message}`)
-    // }
-    
-    // if (onConfirm !== undefined) {
-    //   onConfirm()
-    // }
     Modal.open(PopupAlert, props)
   }
 
@@ -41,23 +31,6 @@ export const useCommonPopup = () => {
    * Confirm Popup 표시
    */
   const showConfirm = (props: CommonPopupProps) => {
-    //const { title, message, onConfirm, onCancel } = props
-    // let result: boolean
-    // if (title) {
-    //   result = confirm(`[${title}]\n\n${message}`)
-    // } else {
-    //   result = confirm(`${message}`)
-    // }
-    
-    // if (result) {
-    //   if (onConfirm !== undefined) {
-    //     onConfirm()
-    //   }
-    // } else {
-    //   if (onCancel !== undefined) {
-    //     onCancel()
-    //   }
-    // }
     Modal.open(PopupConfirm, props)
   }
 
